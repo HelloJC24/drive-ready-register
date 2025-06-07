@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import PersonalInfoStep from "./registration/PersonalInfoStep";
 import ContactInfoStep from "./registration/ContactInfoStep";
 import VehicleInfoStep from "./registration/VehicleInfoStep";
@@ -37,6 +37,7 @@ export interface FormData {
 
 const DriverRegistration = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -91,13 +92,13 @@ const DriverRegistration = () => {
     
     toast({
       title: "Registration Successful!",
-      description: "Your driver registration has been submitted successfully. You will receive a confirmation email shortly.",
+      description: "Your driver registration has been submitted successfully. Please proceed to the psychology examination.",
     });
     
     setIsSubmitting(false);
     
-    // Reset form or redirect
-    console.log("Submitted form data:", formData);
+    // Navigate to psychology exam
+    navigate("/psychology-exam");
   };
 
   const renderStep = () => {
