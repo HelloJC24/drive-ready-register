@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, AddressBook } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { FormData } from "../DriverRegistration";
 
 interface ContactInfoStepProps {
@@ -60,7 +60,7 @@ const ContactInfoStep = ({ data, updateData, onNext, onPrev }: ContactInfoStepPr
     <div className="space-y-6">
       <div className="text-center">
         <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-          <AddressBook className="w-8 h-8 text-primary" />
+          <MapPin className="w-8 h-8 text-primary" />
         </div>
         <p className="text-muted-foreground">
           How can we reach you and where do you live?

@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Check, User, Mail, Phone, AddressBook, Car, Image } from "lucide-react";
+import { Check, User, Mail, Phone, MapPin, Car, Image } from "lucide-react";
 import { FormData } from "../DriverRegistration";
 
 interface ConfirmationStepProps {
@@ -66,7 +65,7 @@ const ConfirmationStep = ({ data, onSubmit, onPrev, isSubmitting }: Confirmation
           </div>
         </InfoSection>
 
-        <InfoSection title="Contact Information" icon={AddressBook}>
+        <InfoSection title="Contact Information" icon={MapPin}>
           <div className="space-y-1">
             <InfoRow label="Email" value={data.email} />
             <InfoRow label="Phone" value={data.phone} />
