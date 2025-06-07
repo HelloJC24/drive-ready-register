@@ -131,8 +131,13 @@ const PsychologyExam = () => {
     if (score >= 4) {
       toast({
         title: "Congratulations!",
-        description: "You have successfully passed the psychology examination and driver registration process.",
+        description: "You have successfully passed the psychology examination. Proceeding to package selection.",
       });
+      
+      // Navigate to driver packages page
+      setTimeout(() => {
+        navigate("/driver-packages");
+      }, 2000);
     } else {
       toast({
         title: "Examination Not Passed",
